@@ -7,10 +7,11 @@ WXCONFIG 	:= wx-config
 OUTPUTPATH	= .
 PROGRAM		= wxHttpClient
 PROGVER		= 1.0
+# 適当なアイコンを同じフォルダに用意してあげてください
 ICONFILE	= wxmac.icns
 
 # Info.plist用の設定
-COMPANY			= Fujitsu KCN
+COMPANY			= Oyatsu
 BUNDLEPACKAGE	= APPL
 BUNDLESIGNATURE	= ????
 
