@@ -2,7 +2,7 @@
  * Main.cpp
  *
  *  Created on: 2011/06/26
- *      Author: Hiroyuki-Nagata
+ *      Author: Nantonaku-Shiawase
  */
 
 #include "Main.h"

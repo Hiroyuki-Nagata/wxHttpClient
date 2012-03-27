@@ -2,13 +2,13 @@
   wxHttpClient  ver.1.0
 ========== ========== ==========
 
-【 ソフト名 】	WxHttpClient
+【 ソフト名 】	   WxHttpClient
 【 製 作 者 】　　永田　裕之
-【  種  別  】 テスト用アプリケーション
-【 開発環境 】　　Windows7 MinGW Code::Blocks
-【 動作環境 】  wxWidgets 2.9がインストールされた状態
-【バージョン】		1.0
-【最終更新日】	2011/12/04
+【  種  別  】       テスト用アプリケーション
+【 開発環境 】   Windows7 MinGW Eclipse Indigo
+【 動作環境 】   wxWidgets 2.9がインストールされた状態
+【バージョン】		2.0
+【最終更新日】	2012/03/22
 
 【 ウ ェ ブ 】	http://d.hatena.ne.jp/panzer-jagdironscrap1/
 【 E - mail 】 newserver002@gmail.com
@@ -20,11 +20,13 @@ wxWidgetsのクラスを使ってHttp通信を行うプログラムです。wxWi
 
 ◇ 動作条件 ◇
 
-今のところWindows + MinGW　の環境で wxWigets 2.8 or 2.9　をインストールした状態でコンパイルすれば実行できます。
+wxWidgets 2.8 or 2.9 をインストールしていれば Windows, Linux, Macでの動作が可能です
 
 ◇ インストール ◇
 
-MinGWのコンソールから「make」または「make -f Makefile」
+各コンソールから
+$ ./configure
+$ make
 
 ◇ アンインストール ◇
 
@@ -36,3 +38,5 @@ MinGWのコンソールから「make」または「make -f Makefile」
 
 2011/12/04
 ・はてな上に置いていたソースコードをCode::Blocksでコンパイルしてgithubに移す
+2012/03/22
+・autoconfを使ってクロスプラットフォームを可能にした

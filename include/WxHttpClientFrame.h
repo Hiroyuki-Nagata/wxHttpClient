@@ -24,9 +24,9 @@ class WxHttpClientFrame : public wxFrame
 public:
 	WxHttpClientFrame(const wxString& title);
 
-	void OnButtonQuit(wxCommandEvent& event);
+	void onButtonQuit(wxCommandEvent& event);
 
-	void OnButtonGetHttp(wxCommandEvent& event);
+	void onButtonGetHttp(wxCommandEvent& event);
 
 protected:
 	//URL入力用文字列
