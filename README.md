@@ -26,7 +26,7 @@ wxWidgets の開発版 をインストールしていれば Windows, Linux, Mac�
   
 各コンソールから  
 ```sh
-$ make -f <各Makefile> Release  
+$ make -f <各OS用Makefile>  
 ```
 
 ◇ アンインストール ◇  
