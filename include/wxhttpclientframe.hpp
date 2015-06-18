@@ -5,8 +5,8 @@
  *      Author: Nantonaku-Shiawase
  */
 
-#ifndef WXHTTPCLIENTFRAME_H
-#define WXHTTPCLIENTFRAME_H
+#ifndef WXHTTPCLIENTFRAME_HPP
+#define WXHTTPCLIENTFRAME_HPP
 
 #include <wx/wx.h>
 #include <wx/url.h>
@@ -39,4 +39,4 @@ private:
     DECLARE_EVENT_TABLE()
 };
 
-#endif // WXHTTPCLIENTFRAME_H
+#endif // WXHTTPCLIENTFRAME_HPP

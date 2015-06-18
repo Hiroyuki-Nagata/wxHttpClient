@@ -5,8 +5,8 @@
  *      Author: Nantonaku-Shiawase
  */
 
-#ifndef MAIN_H_
-#define MAIN_H_
+#ifndef MAIN_HPP_
+#define MAIN_HPP_
 
 #include <wx/wx.h>
 
@@ -17,4 +17,4 @@ class MyApp : public wxApp
 };
 
 
-#endif /* MAIN_H_ */
+#endif /* MAIN_HPP_ */

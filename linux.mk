@@ -1,11 +1,11 @@
 # Makefile
-TARGET 	= wxHttpClient
-OBJECTS = Main.o WxHttpClientFrame.o
+TARGET 	= wxhttpclient
+OBJECTS = main.o wxhttpclientframe.o
 
 # 基本コマンド
-RM 		:= rm
+RM 	:= rm
 CXX 	:= g++
-CC 		:= g++
+CC 	:= g++
 
 # デバッグ時とリリース時の微調整
 CXX_DEBUG_FLAGS		=	-g -O0
@@ -29,9 +29,9 @@ Release	: all
 all : $(TARGET)
 $(TARGET) : $(OBJECTS)
 		$(CXX) $^ -o $@ $(LDFLAGS)
-WxHttpClientFrame.o : WxHttpClientFrame.cpp WxHttpClientFrame.h
+wxhttpclientframe.o : wxhttpclientframe.cpp wxhttpclientframe.hpp
 		$(CXX) -c $< $(CPPFLAGS)
-Main.o : Main.cpp Main.h WxHttpClientFrame.h
+main.o : main.cpp main.hpp wxhttpclientframe.hpp
 		$(CXX) -c $< $(CPPFLAGS)
 
 # make clean

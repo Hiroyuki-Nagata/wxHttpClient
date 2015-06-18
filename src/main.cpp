@@ -5,8 +5,8 @@
  *      Author: Nantonaku-Shiawase
  */
 
-#include "Main.h"
-#include "WxHttpClientFrame.h"
+#include "main.hpp"
+#include "wxhttpclientframe.hpp"
 
 IMPLEMENT_APP(MyApp)
 

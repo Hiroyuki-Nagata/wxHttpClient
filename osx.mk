@@ -1,6 +1,6 @@
 # Makefile
-TARGET 	= wxHttpClient
-OBJECTS = Main.o WxHttpClientFrame.o
+TARGET 	= wxhttpclient
+OBJECTS = main.o wxhttpclientframe.o
 
 # Mac用の設定
 WXCONFIG 	:= wx-config
@@ -16,14 +16,14 @@ BUNDLEPACKAGE	= APPL
 BUNDLESIGNATURE	= ????
 
 # application bundle用の設定
-BUNDLE			=$(OUTPUTPATH)/$(PROGRAM).app
-MACICON			=$(BUNDLE)/Contents/$(ICONFILE)
-MACPKGINFO		=$(BUNDLE)/Contents/PkgInfo
-MACINFOPLIST	=$(BUNDLE)/Contents/Info.plist 
+BUNDLE		= $(OUTPUTPATH)/$(PROGRAM).app
+MACICON		= $(BUNDLE)/Contents/$(ICONFILE)
+MACPKGINFO	= $(BUNDLE)/Contents/PkgInfo
+MACINFOPLIST	= $(BUNDLE)/Contents/Info.plist 
 
 # 基本コマンド
 RM 		:= rm
-CXX 	:= g++
+CXX 		:= g++
 CC 		:= g++
 
 # デバッグ時とリリース時の微調整
@@ -109,12 +109,11 @@ all : $(BUNDLE) $(BUNDLE)/Contents/MacOS/$(PROGRAM) $(MACICON) $(MACPKGINFO) $(M
 
 $(PROGRAM) : $(OBJECTS)
 		$(CXX) $^ -o $@ $(LDFLAGS)
-WxHttpClientFrame.o : WxHttpClientFrame.cpp WxHttpClientFrame.h
+wxhttpclientframe.o : wxhttpclientframe.cpp wxhttpclientframe.hpp
 		$(CXX) -c $< $(CPPFLAGS)
-Main.o : Main.cpp Main.h WxHttpClientFrame.h
+main.o : main.cpp main.hpp wxhttpclientframe.hpp
 		$(CXX) -c $< $(CPPFLAGS)
-		
-		
+
 # make clean
 .PHONY: clean
 clean:

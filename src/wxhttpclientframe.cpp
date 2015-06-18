@@ -5,13 +5,22 @@
  *      Author: Nantonaku-Shiawase
  */
 
-#include "WxHttpClientFrame.h"
+#include "wxhttpclientframe.hpp"
+
+// イベントテーブル
+BEGIN_EVENT_TABLE(WxHttpClientFrame, wxFrame)
+	// ボタン１はOK　HTTPクライアントを起動させる
+	EVT_BUTTON(wxID_EXIT, WxHttpClientFrame::onButtonQuit)
+	// ボタン２はクローズ　アプリケーションを終了させる
+	EVT_BUTTON(wxID_GETHTTP, WxHttpClientFrame::onButtonGetHttp)
+END_EVENT_TABLE()
 
 /*
  * フレームクラス　GUIの描画・HTTP通信の処理を行う
  */
-WxHttpClientFrame::WxHttpClientFrame(const wxString& title) : wxFrame(NULL, -1, title, wxPoint(-1, -1), wxSize(640, 480)) {
-
+WxHttpClientFrame::WxHttpClientFrame(const wxString& title):
+     wxFrame(NULL, -1, title, wxPoint(-1, -1), wxSize(640, 480)) 
+{
 	// 一つのパネルには一つのサイザーが伴う
 	wxPanel *panel = new wxPanel(this, -1);
 	wxBoxSizer *vbox = new wxBoxSizer(wxVERTICAL);
@@ -88,17 +97,7 @@ void WxHttpClientFrame::onButtonGetHttp(wxCommandEvent& WXUNUSED(event)) {
 		HTTPtext += in.ReadLine(); // wxStringは左のような形で連結できる
 	}
 
-	// 作成したインスタンスはdeleteするのがC++の掟
-	delete readHtml;
-
 	// もう一つのテキストコントロールに取得したテキストをセットする
 	m_tc2->SetValue(HTTPtext);
 }
 
-// イベントテーブル
-BEGIN_EVENT_TABLE(WxHttpClientFrame, wxFrame)
-// ボタン１はOK　HTTPクライアントを起動させる
-EVT_BUTTON(wxID_EXIT, WxHttpClientFrame::onButtonQuit)
-// ボタン２はクローズ　アプリケーションを終了させる
-EVT_BUTTON(wxID_GETHTTP, WxHttpClientFrame::onButtonGetHttp)
-END_EVENT_TABLE()
